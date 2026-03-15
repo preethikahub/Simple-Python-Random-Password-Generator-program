@@ -1,67 +1,75 @@
-import random
-import string
+🔐 Random Password Generator (Python)
 
-print("========== RANDOM PASSWORD GENERATOR ==========")
+This project is a Random Password Generator written in Python.
+It allows users to create secure passwords by choosing different character types such as lowercase letters, uppercase letters, numbers, and symbols.
 
-# Function to generate password
-def generate_password():
+📌 Features
 
-    # Ask password length
-    length = int(input("Enter password length: "))
+- User can choose password length
+- Option to include:
+  - Lowercase letters
+  - Uppercase letters
+  - Numbers
+  - Symbols
+- Generates strong and random passwords
+- Option to generate multiple passwords
+- Displays password length after generation
 
-    # Ask user options
-    print("\nSelect character types:")
-    lower = input("Include lowercase letters? (yes/no): ")
-    upper = input("Include uppercase letters? (yes/no): ")
-    numbers = input("Include numbers? (yes/no): ")
-    symbols = input("Include symbols? (yes/no): ")
-    alphabets=input("Include alphabets (yes/no):")
+🛠 Technologies Used
 
-    characters = ""
+- Python
+- Built-in Python libraries:
+  - "random"
+  - "string"
 
-    # Add lowercase letters
-    if lower == "yes":
-        characters += string.ascii_lowercase
-        print("Lowercase letters added")
+📂 How the Program Works
 
-    # Add uppercase letters
-    if upper == "yes":
-        characters += string.ascii_uppercase
-        print("Uppercase letters added")
+1. The program asks the user to enter the desired password length.
+2. The user selects which character types to include:
+   - Lowercase letters
+   - Uppercase letters
+   - Numbers
+   - Symbols
+3. The program combines the selected character sets.
+4. A random password is generated using Python's "random.choice()" function.
+5. The generated password and its length are displayed.
+6. The user can generate another password if needed.
 
-    # Add numbers
-    if numbers == "yes":
-        characters += string.digits
-        print("Numbers added")
+▶️ How to Run the Program
 
-    # Add symbols
-    if symbols == "yes":
-        characters += string.punctuation
-        print("Symbols added")
+1. Install Python on your computer.
+2. Download or clone this repository.
+3. Open the project folder in a terminal or IDE.
+4. Run the program using:
 
-    # Check if any option selected
-    if characters == "":
-        print("Error: No character type selected!")
-        return
+python password_generator.py
 
-    # Generate password
-    password = ""
+💻 Example Output
 
-    for i in range(length):
-        random_char = random.choice(characters)
-        password += random_char
+========== RANDOM PASSWORD GENERATOR ==========
 
-    # Display result
-    print("\nGenerated Password:", password)
-    print("Password Length:", len(password))
-    print("Password generated successfully!")
+Enter password length: 10
 
-# Run program
-while True:
-    generate_password()
+Select character types:
+Include lowercase letters? (yes/no): yes
+Include uppercase letters? (yes/no): yes
+Include numbers? (yes/no): yes
+Include symbols? (yes/no): no
 
-    choice = input("\nGenerate another password? (yes/no): ")
+Lowercase letters added
+Uppercase letters added
+Numbers added
 
-    if choice.lower() != "yes":
-        print("Thank you for using the program!")
-        break
+Generated Password: A8dkL2pQz1
+Password Length: 10
+Password generated successfully!
+
+📚 Learning Purpose
+
+This project helps beginners understand:
+
+- Python functions
+- Loops
+- User input
+- String handling
+- Random module usage
