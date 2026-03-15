@@ -1,47 +1,56 @@
 import random
 import string
 
-print("========== RANDOM PASSWORD GENERATOR ==========")
-
 # Function to generate password
 def generate_password():
 
-    # Ask password length
-    length = int(input("Enter password length: "))
+    print("===== RANDOM PASSWORD GENERATOR =====")
 
-    # Ask user options
-    print("\nSelect character types:")
-    lower = input("Include lowercase letters? (yes/no): ")
-    upper = input("Include uppercase letters? (yes/no): ")
-    numbers = input("Include numbers? (yes/no): ")
-    symbols=input("Include symbol? (yes /no):")
-    characters=input("Include  characters ? (yes /no):")
+    # Ask user for password length
+    while True:
+        try:
+            length = int(input("Enter the password length: "))
+            if length <= 0:
+                print("Length must be greater than 0")
+            else:
+                break
+        except ValueError:
+            print("Please enter a valid number")
+
+    # Ask user which characters to include
+    print("\nSelect character types to include:")
+
+    use_lower = input("Include lowercase letters? (y/n): ").lower()
+    use_upper = input("Include uppercase letters? (y/n): ").lower()
+    use_numbers = input("Include numbers? (y/n): ").lower()
+    use_symbols = input("Include symbols? (y/n): ").lower()
 
     characters = ""
 
     # Add lowercase letters
-    if lower == "yes":
+    if use_lower == "y":
         characters += string.ascii_lowercase
         print("Lowercase letters added")
 
     # Add uppercase letters
-    if upper == "yes":
+    if use_upper == "y":
         characters += string.ascii_uppercase
         print("Uppercase letters added")
 
-    # Add numbers
-    if numbers == "yes":
+    # Add digits
+    if use_numbers == "y":
         characters += string.digits
         print("Numbers added")
 
     # Add symbols
-    if symbols == "yes":
+    if use_symbols == "y":
         characters += string.punctuation
         print("Symbols added")
 
-    # Check if any option selected
+    # Check if at least one option selected
     if characters == "":
-        print("Error: No character type selected!")
+        print("\nError: No character type selected!")
+        print("Please run the program again and select at least one option.")
         return
 
     # Generate password
@@ -52,16 +61,21 @@ def generate_password():
         password += random_char
 
     # Display result
-    print("\nGenerated Password:", password)
+    print("\n===== GENERATED PASSWORD =====")
+    print("Password:", password)
     print("Password Length:", len(password))
-    print("Password generated successfully!")
+    print("Password Generated Successfully!")
+
+# Main program
+def main():
+    while True:
+        generate_password()
+
+        again = input("\nDo you want to generate another password? (y/n): ").lower()
+
+        if again != "y":
+            print("\nThank you for using Password Generator!")
+            break
 
 # Run program
-while True:
-    generate_password()
-
-    choice = input("\nGenerate another password? (yes/no): ")
-
-    if choice.lower() != "yes":
-        print("Thank you for using the program!")
-        break
+main()
