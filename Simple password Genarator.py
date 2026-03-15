@@ -76,6 +76,3 @@ def main():
         if again != "yes":
             print("\nThank you for using Password Generator!")
             break
-
-# Run program
-main()
