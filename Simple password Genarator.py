@@ -15,6 +15,7 @@ def generate_password():
     upper = input("Include uppercase letters? (yes/no): ")
     numbers = input("Include numbers? (yes/no): ")
     symbols=input("Include symbol? (yes /no):")
+    characters=input("Include  characters ? (yes /no):")
 
     characters = ""
 
