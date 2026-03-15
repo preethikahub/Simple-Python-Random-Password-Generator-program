@@ -20,30 +20,30 @@ def generate_password():
     # Ask user which characters to include
     print("\nSelect character types to include:")
 
-    use_lower = input("Include lowercase letters? (y/n): ").lower()
-    use_upper = input("Include uppercase letters? (y/n): ").lower()
-    use_numbers = input("Include numbers? (y/n): ").lower()
-    use_symbols = input("Include symbols? (y/n): ").lower()
+    use_lower = input("Include lowercase letters? (yes/no): ").lower()
+    use_upper = input("Include uppercase letters? (yes/no): ").lower()
+    use_numbers = input("Include numbers? (yes/no): ").lower()
+    use_symbols = input("Include symbols? (yes/no): ").lower()
 
     characters = ""
 
     # Add lowercase letters
-    if use_lower == "y":
+    if use_lower == "yes":
         characters += string.ascii_lowercase
         print("Lowercase letters added")
 
     # Add uppercase letters
-    if use_upper == "y":
+    if use_upper == "yes":
         characters += string.ascii_uppercase
         print("Uppercase letters added")
 
     # Add digits
-    if use_numbers == "y":
+    if use_numbers == "yes":
         characters += string.digits
         print("Numbers added")
 
     # Add symbols
-    if use_symbols == "y":
+    if use_symbols == "yes":
         characters += string.punctuation
         print("Symbols added")
 
@@ -71,7 +71,7 @@ def main():
     while True:
         generate_password()
 
-        again = input("\nDo you want to generate another password? (y/n): ").lower()
+        again = input("\nDo you want to generate another password? (yes/no): ").lower()
 
         if again != "y":
             print("\nThank you for using Password Generator!")
