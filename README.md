@@ -52,8 +52,11 @@ Enter password length: 10
 
 Select character types:
 Include lowercase letters? (yes/no): yes
+
 Include uppercase letters? (yes/no): yes
+
 Include numbers? (yes/no): yes
+
 Include symbols? (yes/no): no
 
 Lowercase letters added
