@@ -64,7 +64,9 @@ Uppercase letters added
 Numbers added
 
 Generated Password: A8dkL2pQz1
+
 Password Length: 10
+
 Password generated successfully!
 
 📚 Learning Purpose
