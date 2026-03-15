@@ -73,7 +73,7 @@ def main():
 
         again = input("\nDo you want to generate another password? (yes/no): ").lower()
 
-        if again != "y":
+        if again != "yes":
             print("\nThank you for using Password Generator!")
             break
 
